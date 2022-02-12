@@ -20,7 +20,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (request, response) => {
-  response.status(200).send('Welcome to Star wars api');
+  response.status(200).send('Welcome to Red-Acre-Backend');
 });
 
 app.use('*', (request, response) => {
