@@ -1,11 +1,19 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
 
-const officeLunchSchema = new Schema ({
-  lat: String,
-  lng: String
+const officeLunchSchema = new mongoose.Schema({
+  lng: {
+    type: String,
+    required: [true, 'Please add a longitude']
+  },
+  lat: {
+    type: String,
+    required: [true, 'Please add a latitude']
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-const OfficeLunch = mongoose.model('OfficeLunch', officeLunchSchema);
-
-module.exports = OfficeLunch;
+const officeLunch = mongoose.model('office-lunch', officeLunchSchema)
+module.exports = officeLunch

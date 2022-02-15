@@ -1,19 +1,19 @@
-const mongoose = require("mongoose");
-require("dotenv").config({path: '../../.env'});
-mongoose.Promise = global.Promise;
-mongoose
-  .connect(process.env.mongodbURI, {
-    useNewUrlParser: true,
-   // useCreateIndex: true,
-    useUnifiedTopology: true,
-   // useFindAndModify: false,
-  })
-  .then((res) => {
-    console.log("Connected successfully");
-  })
-  .catch((err) => {
-    console.log({ err });
-    console.log("Not connected");
-  });
+import mongoose from 'mongoose';
 
-module.exports = { mongoose };
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.mongodbURI, {
+      useNewUrlParser: true,
+      //useCreateIndex: true,
+      //useFindAndModify: false,
+      useUnifiedTopology: true
+    });
+
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+};
+
+export default connectDB;
