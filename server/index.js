@@ -12,7 +12,7 @@ const app = express();
 dotenv.config({ path: '.env' });
 
 
-//connectDB();
+
 
 
 app.use(cors());
