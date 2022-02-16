@@ -15,5 +15,5 @@ const officeLunchSchema = new mongoose.Schema({
   }
 });
 
-const officeLunch = mongoose.model('office-lunch', officeLunchSchema)
+const officeLunch = mongoose.model('office-lunch', officeLunchSchema, 'office-lunch')
 module.exports = officeLunch

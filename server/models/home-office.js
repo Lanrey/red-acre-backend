@@ -15,5 +15,5 @@ const HomeOfficeSchema = new mongoose.Schema({
   }
 });
 
-const homeOffice = mongoose.model('balluta-office', HomeOfficeSchema)
+const homeOffice = mongoose.model('balluta-office', HomeOfficeSchema, 'balluta-office')
 module.exports = homeOffice
